@@ -15,7 +15,8 @@ export const Banner = () => {
     const [ movie, setMovie ] = useState<movieProps>();
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(requests.feachNetflixOriginals);
+            const fetch_url = `https://api.themoviedb.org/3${requests.feachNetflixOriginals}`;
+            const request = await axios.get(fetch_url);
             console.log(request.data.result);
 
             // setMovie
